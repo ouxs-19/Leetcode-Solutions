@@ -15,4 +15,4 @@ class Solution:
                 return self.minDepth(root.right)+1
             else:
                 return 1
-        return 0
+        return 0    
