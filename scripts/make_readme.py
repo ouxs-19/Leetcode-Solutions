@@ -7,7 +7,7 @@ import json
 import sys
 import markdownify
 from os import path
-
+import re
 
 nested_get = lambda arr, obj: reduce(lambda dict, key: dict[key], arr, obj)
 
@@ -44,7 +44,8 @@ class Leetcode_Problem:
         self.topics = nested_get(TOPICS_PATH, data)
 
     def construct_url(self, url):
-        return LEETCODE_URL + url.split(" ", 1)[1].lower().replace(" ", "-").replace(   "'", "")
+        name = re.sub('\s{2,}', ' ', re.sub('[^a-z0-9 ]+', '',url.split(" ",1)[1].lower())).replace(" ","-")
+        return LEETCODE_URL + name
 
     def desc_to_md(self):
         self.description = markdownify.markdownify(
