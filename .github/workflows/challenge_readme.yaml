@@ -4,6 +4,10 @@ on: ['push']
 jobs:
   readme-generator:
     runs-on: ubuntu-20.04
+    env:
+      GET_FILES: scripts/readme_gen.sh
+      GEN_MD: scripts/make_readme.py
+
     steps:
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -21,4 +25,14 @@ jobs:
 
       - name: readme maker
         run: |
-          echo "${{ steps.file_changes.outputs.files }}"
+          python3 "$GET_FILES" "${{ steps.file_changes.outputs.files }}"
+
+      - name: Push changes
+        run: |
+          git config user.name GitHub Action
+          git config user.email github-actions@github.com
+          git status
+          git add .
+          git commit -m "Added challenge README"
+          git push 
+        

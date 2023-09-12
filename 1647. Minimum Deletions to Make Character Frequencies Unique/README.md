@@ -8,7 +8,7 @@
     - String
     - Greedy
     - Sorting
-- **Accuracy rate**: 61.1%  
+- **Accuracy rate**: 61.2%  
 
 ## Description  
     
