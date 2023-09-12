@@ -9,10 +9,15 @@ import markdownify
 from os import path
 
 
-nested_get = lambda arr, obj : reduce(lambda dict, key : dict[key], arr, obj)
+nested_get = lambda arr, obj: reduce(lambda dict, key: dict[key], arr, obj)
 
 SCRIPT_ROOT = path.dirname(__file__)
-JINJA_ENV = jinja2.Environment(loader=jinja2.FileSystemLoader(path.join(SCRIPT_ROOT, TEMPLATES_DIR)), trim_blocks=True, lstrip_blocks=True)
+JINJA_ENV = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(path.join(SCRIPT_ROOT, TEMPLATES_DIR)),
+    trim_blocks=True,
+    lstrip_blocks=True,
+)
+
 
 class Leetcode_Problem:
     def __init__(self, name):
@@ -23,8 +28,8 @@ class Leetcode_Problem:
 
     def fetch_info(self):
         response = requests.get(self.url)
-        soup = BeautifulSoup(response.text , PARSER)
-        res = soup.find_all('script' , attrs=ATTRS)
+        soup = BeautifulSoup(response.text, PARSER)
+        res = soup.find_all("script", attrs=ATTRS)
         data = json.loads(res[0].contents[0])
 
         return data
@@ -39,22 +44,24 @@ class Leetcode_Problem:
         self.topics = nested_get(TOPICS_PATH, data)
 
     def construct_url(self, url):
-        return LEETCODE_URL + url.split(" ", 1)[1].lower().replace(" ","-")
+        return LEETCODE_URL + url.split(" ", 1)[1].lower().replace(" ", "-").replace(   "'", "")
 
     def desc_to_md(self):
-        self.description = markdownify.markdownify(self.description, heading_style=MD_STYLE)
-    
+        self.description = markdownify.markdownify(
+            self.description, heading_style=MD_STYLE
+        )
+
     def prepare_topics(self):
-        self.topics = [ topic[TOPICS_KEY] for topic in self.topics]
+        self.topics = [topic[TOPICS_KEY] for topic in self.topics]
 
     def get_attrs(self):
         return dict(
-            challenge_name = self.name,
-            challenge_link = self.url,  
-            challenge_difficulty = self.difficulty,
-            challenge_topics = challenge.topics,
-            challenge_acc = self.acc,
-            challenge_description = self.description
+            challenge_name=self.name,
+            challenge_link=self.url,
+            challenge_difficulty=self.difficulty,
+            challenge_topics=challenge.topics,
+            challenge_acc=self.acc,
+            challenge_description=self.description,
         )
 
 
@@ -66,12 +73,9 @@ def generate_README(JINJA_ENV, challenge, challenge_path):
         f.write(content)
 
 
-
-if len(sys.argv) != 2 :
+if len(sys.argv) != 2:
     print("Usage: ./make_readme.py '1. challenge'")
     exit()
-\
-
 challenge_path = sys.argv[1]
 challenge = Leetcode_Problem(challenge_path)
 generate_README(JINJA_ENV, challenge, challenge_path)
