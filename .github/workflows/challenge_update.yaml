@@ -1,4 +1,4 @@
-name: Challenge readme maker
+name: Challenge Update
 on: ['push']
 
 jobs:
@@ -6,16 +6,15 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       GET_FILES: scripts/readme_gen.sh
-      GEN_MD: scripts/make_readme.py
+      GEN_MD: scripts/new_challenge.py
       PY_REQ_PATH: scripts/requirements.txt
 
     steps:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10' 
+          python-version: '3.11' 
           
-
       
       - uses: actions/checkout@v3
         id: github-checkout
@@ -30,7 +29,7 @@ jobs:
         run: |
           pip install -r "$PY_REQ_PATH"
 
-      - name: readme maker
+      - name: readme maker and topic updater
         run: |
           "$GET_FILES" "${{ steps.file_changes.outputs.files }}"
 
@@ -42,7 +41,7 @@ jobs:
             git config user.email github-actions@github.com
             git status
             git add .
-            git commit -m "Added challenge README"
+            git commit -m "Added challenge's README and updated topics"
             git push 
           else
             echo "Nothing to commit"

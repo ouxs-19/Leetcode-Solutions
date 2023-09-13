@@ -1,7 +1,7 @@
 name: Main readme maker
 on: 
   workflow_run:
-    workflows: ["Challenge readme maker"]
+    workflows: ["Challenge Update"]
     types:
       - completed
 
@@ -37,7 +37,7 @@ jobs:
             git config user.email github-actions@github.com
             git status
             git add .
-            git commit -m "Added challenge README"
+            git commit -m "Updated the main readme"
             git push 
           else
             echo "Nothing to commit"
