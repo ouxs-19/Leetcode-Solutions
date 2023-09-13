@@ -5,13 +5,13 @@ This repository contains my solutions to various problems on LeetCode. The solut
 
 ## Stats  
 
-- **Easy**: 108/714  
+- **Easy**: 109/714  
     ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/15?dangerColor=00b8a3) 
 - **Medium**: 178/1510  
     ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/12?dangerColor=ffc01e) 
 - **Hard**: 52/627  
     ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/8?dangerColor=ef4743) 
-- **Total**: 338/2851  
+- **Total**: 339/2851  
     ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/12?dangerColor=1c27a3) 
 
 ## Table of Contents
@@ -741,6 +741,10 @@ This repository contains my solutions to various problems on LeetCode. The solut
  
 
 * [393. UTF-8 Validation](393.%20UTF-8%20Validation )
+
+ 
+
+* [2114. Maximum Number of Words Found in Sentences](2114.%20Maximum%20Number%20of%20Words%20Found%20in%20Sentences )
 
 
 ### Binary Search
@@ -2647,6 +2651,10 @@ This repository contains my solutions to various problems on LeetCode. The solut
  
 
 * [2842. Count K-Subsequences of a String With Maximum Beauty](2842.%20Count%20K-Subsequences%20of%20a%20String%20With%20Maximum%20Beauty )
+
+ 
+
+* [2114. Maximum Number of Words Found in Sentences](2114.%20Maximum%20Number%20of%20Words%20Found%20in%20Sentences )
 
 
 ### Matrix
