@@ -17,7 +17,7 @@ jobs:
           
       - name: Installing PY packages
         run: |
-          pip install -r "$PY_REQ_PATH"
+          ls
       
       - uses: actions/checkout@v3
         id: github-checkout
