@@ -7,13 +7,16 @@ jobs:
     env:
       GET_FILES: scripts/readme_gen.sh
       GEN_MD: scripts/make_readme.py
+      PY_REQ_PATH: scripts/requirements.txt
 
     steps:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10' 
-
+        run: |
+          pip install -r "$PY_REQ_PATH"
+      
       - uses: actions/checkout@v3
         id: github-checkout
 
