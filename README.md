@@ -5,14 +5,14 @@ This repository contains my solutions to various problems on LeetCode. The solut
 
 ## Stats  
 
-- **Easy**: 107/714
+- **Easy**: 107/714  
     ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/15?dangerColor=00b8a3) 
-- **Medium**: 178/1510
+- **Medium**: 178/1510  
     ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/12?dangerColor=ffc01e) 
-- **Hard**: 52/627
-    ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/8?dangerColor=ef4743    ) 
-- **Total**: 337/2851
-    ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/12?dangerColor=1c27a3    ) 
+- **Hard**: 52/627  
+    ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/8?dangerColor=ef4743) 
+- **Total**: 337/2851  
+    ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/12?dangerColor=1c27a3) 
 
 ## Table of Contents
 
