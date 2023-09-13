@@ -108,5 +108,5 @@ if len(sys.argv) != 2:
 
 challenge_path = sys.argv[1]
 challenge = Leetcode_Problem(challenge_path)
-#generate_README(JINJA_ENV, challenge, challenge_path)
+generate_README(JINJA_ENV, challenge, challenge_path)
 challenge.add_to_counter()

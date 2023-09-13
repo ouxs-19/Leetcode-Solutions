@@ -11,38 +11,17 @@ This repository contains my solutions to various problems on LeetCode. The solut
 {% endfor %}
 
 ## Table of Contents
+{% for topic in topics %}
+*   [{{topic}}](#{{topic.lower().replace(" ","-")}})
+{% endfor %}
 
-*   [Arrays](#arrays)
-*   [Strings](#strings)
-*   [Linked Lists](#linked-lists)
-*   [Trees](#trees)
-*   [Sorting and Searching](#sorting-and-searching)
-*   [Dynamic Programming](#dynamic-programming)
-*   [Miscellaneous](#miscellaneous)
+## Topics
+{% for topic in topics %}
 
-## Arrays
+### {{topic}}
+{% for problem in topics[topic] %} 
 
-*   [TO DO]()
+* [{{problem}}](problem)
 
-## Strings
-
-*   [TO DO]()
-
-## Linked Lists
-
-*   [TO DO]()
-
-## Trees
-
-*   [TO DO]()
-
-## Sorting and Searching
-
-*   [TO DO]()
-
-## Dynamic Programming
-
-*   [TO DO]()
-
-## Miscellaneous
-
+{% endfor %}
+{% endfor %}

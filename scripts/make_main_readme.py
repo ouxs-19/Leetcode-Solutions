@@ -3,7 +3,7 @@ import requests
 import jinja2
 from os import path
 from functools import reduce
-
+import json
 
 nested_get = lambda arr, obj: reduce(lambda dict, key: dict[key], arr, obj)
 
@@ -42,6 +42,13 @@ def construct_stats(cog, data):
 
     return statCog
 
+def load_counter():
+    with open(COUNTER_FILE, "r") as stream:
+        try:
+            return json.load(stream)
+        except Exception as exc:
+            print(exc)
+            exit()
 
 if __name__ == "__main__":
     data = requests.get(API_URL).json()
@@ -50,8 +57,10 @@ if __name__ == "__main__":
     for category in CATEGORIES:
         stats[category] = construct_stats(category, data)
 
+    topics = load_counter()
+
     template = JINJA_ENV.get_template(MAIN_README_TEMPLATE)
-    content = template.render(dict(stats=stats))
+    content = template.render(dict(stats=stats, topics=topics))
 
     with open(README_PATH, "w") as f:
         f.write(content)
