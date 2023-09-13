@@ -15,9 +15,7 @@ jobs:
         with:
           python-version: '3.10' 
           
-      - name: Installing PY packages
-        run: |
-          echo $(ls)
+
       
       - uses: actions/checkout@v3
         id: github-checkout
@@ -27,6 +25,12 @@ jobs:
         with:
           output: ','
           fileOutput: ','
+
+      - name: Installing PY packages
+        run: |
+          echo "here"
+          echo $(ls)
+          cat "$PY_REQ_PATH"
 
       - name: readme maker
         run: |
