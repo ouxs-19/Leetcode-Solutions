@@ -28,6 +28,7 @@ jobs:
       - name: Push changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then
+            git pull
             git config user.name GitHub Action
             git config user.email github-actions@github.com
             git status
