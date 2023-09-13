@@ -75,7 +75,6 @@ def generate_README(JINJA_ENV, challenge, challenge_path):
 
 
 if len(sys.argv) != 2:
-    print(sys.argv)
     print("Usage: ./make_readme.py '1. challenge'")
     exit()
 
