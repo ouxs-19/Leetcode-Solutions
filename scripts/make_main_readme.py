@@ -4,6 +4,9 @@ import jinja2
 from os import path
 from functools import reduce
 import json
+from urllib.parse import quote
+
+
 
 nested_get = lambda arr, obj: reduce(lambda dict, key: dict[key], arr, obj)
 
@@ -15,6 +18,7 @@ JINJA_ENV = jinja2.Environment(
     lstrip_blocks=True,
 )
 
+JINJA_ENV.filters['url_encode'] = quote
 
 from dataclasses import dataclass
 
