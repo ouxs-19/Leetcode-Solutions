@@ -166,7 +166,8 @@
         "990. Satisfiability of Equality Equations",
         "997. Find the Town Judge",
         "435. Non-overlapping Intervals",
-        "393. UTF-8 Validation"
+        "393. UTF-8 Validation",
+        "2114. Maximum Number of Words Found in Sentences"
     ],
     "Binary Search": [
         "4. Median of Two Sorted Arrays",
@@ -662,7 +663,8 @@
         "97. Interleaving String",
         "990. Satisfiability of Equality Equations",
         "981. Time Based Key-Value Store",
-        "2842. Count K-Subsequences of a String With Maximum Beauty"
+        "2842. Count K-Subsequences of a String With Maximum Beauty",
+        "2114. Maximum Number of Words Found in Sentences"
     ],
     "Matrix": [
         "1074. Number of Submatrices That Sum to Target",
