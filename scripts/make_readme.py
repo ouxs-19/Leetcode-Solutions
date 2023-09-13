@@ -75,8 +75,10 @@ def generate_README(JINJA_ENV, challenge, challenge_path):
 
 
 if len(sys.argv) != 2:
+    print(sys.argv)
     print("Usage: ./make_readme.py '1. challenge'")
     exit()
+
 challenge_path = sys.argv[1]
 challenge = Leetcode_Problem(challenge_path)
 generate_README(JINJA_ENV, challenge, challenge_path)
