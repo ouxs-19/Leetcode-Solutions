@@ -1,30 +1,21 @@
-name: Challenge readme maker
+name: Main readme maker
 on: ['push']
 
 jobs:
   readme-generator:
     runs-on: ubuntu-20.04
     env:
-      GET_FILES: scripts/readme_gen.sh
-      GEN_MD: scripts/make_readme.py
+      GEN_MD: scripts/make_main_readme.py
       PY_REQ_PATH: scripts/requirements.txt
 
     steps:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10' 
-          
-
+          python-version: '3.11' 
       
       - uses: actions/checkout@v3
         id: github-checkout
-
-      - id: file_changes
-        uses: trilom/file-changes-action@v1.2.3
-        with:
-          output: ','
-          fileOutput: ','
 
       - name: Installing PY packages
         run: |
@@ -32,7 +23,7 @@ jobs:
 
       - name: readme maker
         run: |
-          "$GET_FILES" "${{ steps.file_changes.outputs.files }}"
+          python3 "$GEN_MD"
 
       - name: Push changes
         run: |
