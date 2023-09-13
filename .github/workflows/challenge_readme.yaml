@@ -28,9 +28,7 @@ jobs:
 
       - name: Installing PY packages
         run: |
-          echo "here"
-          echo $(ls)
-          cat "$PY_REQ_PATH"
+          pip install -r "$PY_REQ_PATH"
 
       - name: readme maker
         run: |
