@@ -1,5 +1,9 @@
 name: Main readme maker
-on: ['push']
+on: 
+  workflow_run:
+    workflows: ["Challenge readme maker"]
+    types:
+      - completed
 
 jobs:
   readme-generator:
