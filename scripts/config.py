@@ -22,6 +22,7 @@ TEMPLATES_DIR = "templates"
 README_TEMPLATE = "readme.j2"
 README_PATH = "README.md"
 
+
 # Stats script
 
 API_URL = "https://leetcode-api-faisalshohag.vercel.app/ouxs-19"
@@ -36,3 +37,8 @@ CATEGORIES = {
 PROGRESS_BAR_LINK = "https://us-central1-progress-markdown.cloudfunctions.net/progress/{}?dangerColor={}"
 
 MAIN_README_TEMPLATE = "main_readme.j2"
+
+
+# Counter 
+
+COUNTER_FILE = "counter/challenges.json"

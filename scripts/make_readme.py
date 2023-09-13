@@ -21,6 +21,7 @@ JINJA_ENV = jinja2.Environment(
 
 class Leetcode_Problem:
     def __init__(self, name):
+        self.raw_name = name
         self.url = self.construct_url(name)
         self.set_info()
         self.desc_to_md()
@@ -44,7 +45,7 @@ class Leetcode_Problem:
         self.topics = nested_get(TOPICS_PATH, data)
 
     def construct_url(self, url):
-        name = re.sub('\s{2,}', ' ', re.sub('[^a-z0-9 ]+', '',url.split(" ",1)[1].lower())).replace(" ","-")
+        name = re.sub('\s{2,}', ' ', re.sub('-{2,}', '', re.sub('[^a-z0-9- ]+', '',url.split(" ",1)[1].lower()))).replace(" ","-")
         return LEETCODE_URL + name
 
     def desc_to_md(self):
@@ -65,6 +66,33 @@ class Leetcode_Problem:
             challenge_description=self.description,
         )
 
+    def add_to_counter(self):
+        challenges_counter = self.load_challs_counter()
+
+        for topic in self.topics:
+            if topic not in challenges_counter:
+                challenges_counter[topic] = [self.raw_name]
+            else :
+                if self.raw_name not in challenges_counter[topic] : 
+                    challenges_counter[topic].append(self.raw_name)
+
+        self.save_counter(challenges_counter)
+
+    def load_challs_counter(self):
+        with open(COUNTER_FILE, "r") as stream:
+            try:
+                return json.load(stream)
+            except Exception as exc:
+                print(exc)
+                exit()
+
+    def save_counter(self, data):
+        with open(COUNTER_FILE, "w") as f:
+            try:
+                return json.dump(data, f,   indent=4)
+            except Exception as exc:
+                print(exc)
+                exit()
 
 def generate_README(JINJA_ENV, challenge, challenge_path):
     template = JINJA_ENV.get_template(README_TEMPLATE)
@@ -80,4 +108,5 @@ if len(sys.argv) != 2:
 
 challenge_path = sys.argv[1]
 challenge = Leetcode_Problem(challenge_path)
-generate_README(JINJA_ENV, challenge, challenge_path)
+#generate_README(JINJA_ENV, challenge, challenge_path)
+challenge.add_to_counter()
