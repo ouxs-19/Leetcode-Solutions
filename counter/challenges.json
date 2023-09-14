@@ -424,7 +424,8 @@
         "987. Vertical Order Traversal of a Binary Tree",
         "98. Validate Binary Search Tree",
         "1457. Pseudo-Palindromic Paths in a Binary Tree",
-        "872. Leaf-Similar Trees"
+        "872. Leaf-Similar Trees",
+        "332. Reconstruct Itinerary"
     ],
     "Breadth-First Search": [
         "100. Same Tree",
@@ -1011,7 +1012,8 @@
         "1632. Rank Transform of a Matrix",
         "329. Longest Increasing Path in a Matrix",
         "990. Satisfiability of Equality Equations",
-        "997. Find the Town Judge"
+        "997. Find the Town Judge",
+        "332. Reconstruct Itinerary"
     ],
     "Topological Sort": [
         "1632. Rank Transform of a Matrix",
@@ -1127,5 +1129,8 @@
     ],
     "Game Theory": [
         "877. Stone Game"
+    ],
+    "Eulerian Circuit": [
+        "332. Reconstruct Itinerary"
     ]
 }
