@@ -7,11 +7,11 @@ This repository contains my solutions to various problems on LeetCode. The solut
 
 - **Easy**: 109/714  
     ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/15?dangerColor=00b8a3) 
-- **Medium**: 178/1510  
+- **Medium**: 178/1511  
     ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/12?dangerColor=ffc01e) 
-- **Hard**: 52/627  
+- **Hard**: 53/627  
     ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/8?dangerColor=ef4743) 
-- **Total**: 339/2851  
+- **Total**: 340/2852  
     ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/12?dangerColor=1c27a3) 
 
 ## Table of Contents
@@ -70,6 +70,7 @@ This repository contains my solutions to various problems on LeetCode. The solut
 *   [Hash Function](#hash-function)
 *   [Geometry](#geometry)
 *   [Game Theory](#game-theory)
+*   [Eulerian Circuit](#eulerian-circuit)
 
 ## Topics
 
@@ -1719,6 +1720,10 @@ This repository contains my solutions to various problems on LeetCode. The solut
  
 
 * [872. Leaf-Similar Trees](872.%20Leaf-Similar%20Trees )
+
+ 
+
+* [332. Reconstruct Itinerary](332.%20Reconstruct%20Itinerary )
 
 
 ### Breadth-First Search
@@ -3936,6 +3941,10 @@ This repository contains my solutions to various problems on LeetCode. The solut
 
 * [997. Find the Town Judge](997.%20Find%20the%20Town%20Judge )
 
+ 
+
+* [332. Reconstruct Itinerary](332.%20Reconstruct%20Itinerary )
+
 
 ### Topological Sort
  
@@ -4257,4 +4266,10 @@ This repository contains my solutions to various problems on LeetCode. The solut
  
 
 * [877. Stone Game](877.%20Stone%20Game )
+
+
+### Eulerian Circuit
+ 
+
+* [332. Reconstruct Itinerary](332.%20Reconstruct%20Itinerary )
 
